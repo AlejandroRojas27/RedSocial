@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 public class UserController {
@@ -16,7 +16,7 @@ public class UserController {
     @Autowired
     UserServices userServices;
 
-    @RequestMapping(value = "users", method = RequestMethod.GET)
+    @RequestMapping(value = "api/users", method = RequestMethod.GET)
     public List<UserModel> getUsers() {
         return userServices.getUsers();
     }
@@ -37,7 +37,7 @@ public class UserController {
         return userServices.findUserById(id);
     }
 
-    @RequestMapping(value = "deleteUser/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "api/deleteUser/{id}", method = RequestMethod.DELETE)
     public String deleteUser(@PathVariable Long id) {
         try {
             this.userServices.deleteUser(id);

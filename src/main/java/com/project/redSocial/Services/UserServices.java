@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional
@@ -46,7 +45,7 @@ public class UserServices implements UserRepository {
     public UserModel findUserByIdentifications(UserModel user) {
         String query = "FROM UserModel WHERE email = :email";
         List<UserModel> list = entityManager.createQuery(query)
-                .setParameter("emai", user.getEmail())
+                .setParameter("email", user.getEmail())
                 .getResultList();
 
         if(list.isEmpty()){
@@ -63,33 +62,6 @@ public class UserServices implements UserRepository {
         return null;
     }
 
-    /*
-    @Autowired
-    UserRepository userRepository;
-
-    public ArrayList<UserModel> findUsers() {
-        return (ArrayList<UserModel>) userRepository.findAll();
-    }
-
-    public UserModel saveUser(UserModel user) {
-        return userRepository.save(user);
-    }
-
-    public Optional<UserModel> findUserById(Long id) {
-        return userRepository.findById(id);
-    }
-
-    public boolean deleteUser(Long id) {
-
-        try {
-            userRepository.deleteById(id);
-            return true;
-        } catch (Exception err) {
-            return false;
-        }
-    }
-
-     */
 
 
 }
