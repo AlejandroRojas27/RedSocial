@@ -1,0 +1,24 @@
+#users {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    border: 1px solid rgb(95, 56, 50);
+
+}
+
+
+th{
+    text-align:left;
+    padding: 8px;
+    border:1px solid rgb(95, 56, 50);
+    background-color: rgb(88, 215, 165);
+    color: #000;
+}
+
+
+td{
+    text-align:left;
+    padding:8px;
+    border:1px solid rgb(95, 56, 50);
+    background:#e5f1f4;
+}

@@ -1,0 +1,32 @@
+#navBar{
+    background-color: rgb(89, 215, 165);
+    display: grid;
+    grid-template-columns: 120px 120px 120px auto 200px;
+    grid-template-rows: 1fr;
+}
+
+.navContainer{
+    border: 1px solid rgb(95, 56, 50);
+    border-radius: 7px;
+    padding: 10px;
+    margin: 10px;
+    display: grid;
+    justify-content: center;
+}
+
+.navContainer.button:hover{
+    background-color:rgb(95, 56, 50);
+    color: rgb(89, 215, 165);
+}
+
+
+#userName{
+    background-color:rgb(95, 56, 50);
+    color: rgb(89, 215, 165);
+    border: 1px solid rgb(95, 56, 50);
+    border-radius: 7px;
+    padding: 10px;
+    margin: 10px;
+    display: grid;
+    justify-content: right;
+}
