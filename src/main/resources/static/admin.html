@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin</title>
+
+    <link rel="stylesheet" href="style/navigationBarAdmin.css" type="text/css">
+    <link rel="stylesheet" href="style/userList.css" type="text/css">
+    <link rel="stylesheet" href="style/bodyStyle.css" type="text/css">
+
+
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Navigation bar -->
+<div id="navBar">
+    <div class="navContainer">Admin</div>
+    <div class="navContainer button">Button 1</div>
+    <div class="navContainer button">Button 2</div>
+    <div></div> <!-- Empty space -->
+    <div id="userName">User name</div>
+</div>
+
+<!-- Content -->
+<div>
+
+    <!-- Table -->
+    <h1 style="margin-left: 10px;">User list</h1>
+    <table id="users">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Full name</th>
+            <th>Email</th>
+            <th>Years</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+
+</div>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+
+<script src="js/admin.js"></script>
+
+
+</body>
+</html>
