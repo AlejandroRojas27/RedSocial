@@ -21,9 +21,9 @@ public class AuthController {
     private JWTUtil jwtUtil;
 
     @RequestMapping(value = "api/login", method = RequestMethod.POST)
-    public String login(@RequestBody UserModel usuario) {
+    public String login(@RequestBody UserModel user) {
 
-        UserModel userLogged = userRepository.findUserByIdentifications(usuario);
+        UserModel userLogged = userRepository.findUserByIdentifications(user);
 
         if (userLogged != null) {
             String token = jwtUtil.create(String.valueOf(userLogged.getId()), userLogged.getEmail());

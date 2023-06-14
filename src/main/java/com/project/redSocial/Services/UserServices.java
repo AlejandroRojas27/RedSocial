@@ -48,20 +48,25 @@ public class UserServices implements UserRepository {
                 .setParameter("email", user.getEmail())
                 .getResultList();
 
-        if(list.isEmpty()){
+        if (list.isEmpty()) {
             return null;
         }
 
         String passwordHashed = list.get(0).getPassword();
         Argon2 argon2 = Argon2Factory.create(Argon2Factory.Argon2Types.ARGON2id);
 
-        if(argon2.verify(passwordHashed, user.getPassword())){
+        if (argon2.verify(passwordHashed, user.getPassword())) {
             return list.get(0);
         }
 
         return null;
     }
 
+    @Override
+    public List<UserModel> findUserByEmail(String email) {
+        String query = "FROM UserModel WHERE email = :email";
+        return entityManager.createQuery(query).setParameter("email", email).getResultList();
+    }
 
 
 }

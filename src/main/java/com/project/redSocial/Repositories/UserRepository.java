@@ -19,5 +19,5 @@ public interface UserRepository {
 
     UserModel findUserByIdentifications(UserModel user);
 
-
+    List<UserModel> findUserByEmail(String email);
 }

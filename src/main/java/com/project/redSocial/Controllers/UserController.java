@@ -37,6 +37,11 @@ public class UserController {
         return userServices.findUserById(id);
     }
 
+    @RequestMapping(value = "api/user/{email}", method = RequestMethod.GET)
+    public List<UserModel> findUserByEmail(@PathVariable String email){
+        return userServices.findUserByEmail(email);
+    }
+
     @RequestMapping(value = "api/deleteUser/{id}", method = RequestMethod.DELETE)
     public String deleteUser(@PathVariable Long id) {
         try {
