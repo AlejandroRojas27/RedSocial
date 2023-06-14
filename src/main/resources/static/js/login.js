@@ -9,9 +9,6 @@ async function login() {
     data.email = document.getElementById('txtEmail').value;
     data.password = document.getElementById('txtPassword').value;
 
-    /** Dummy checkpoint */
-    console.log(data);
-
     if (data.email == "") {
         alert("Email cannot be empty");
         return;
@@ -27,9 +24,6 @@ async function login() {
     })
 
      const listOfEmail = await findByEmail.json()
-
-     /** Dummy checkpoint */
-     console.log(listOfEmail.length);
 
     if(listOfEmail.length == 0){
         alert('User is not registered, Sign up')
@@ -47,8 +41,6 @@ async function login() {
 
         const response = await request.text();
 
-        console.log(response)
-
         if(response != "FAIL"){
             localStorage.token = response;
             localStorage.email = data.email;
@@ -58,7 +50,6 @@ async function login() {
             }else{
                 window.location.href = 'paper.html'
             }
-
 
         }else{
             alert("Email or password are wrong, please try again.")
