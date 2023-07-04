@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+
+    <link rel="stylesheet" href="style/loginStyle.css">
+    <link rel="stylesheet" href="style/bodyStyle.css">
+    <link rel="stylesheet" href="style/navigationBarAdmin.css">
+
 </head>
 <body>
 
-<h1>Login</h1>
+    <h1 class="title">Login</h1>
 
-<div>
+<div class="content">
     <form>
         <div>
             <input type="email" id="txtEmail" placeholder="Enter email">
@@ -18,7 +23,7 @@
             <input type="password" id="txtPassword" placeholder="Password">
         </div>
 
-        <a onclick="login()" href="#">Log in</a>
+        <a class="navContainer button" onclick="login()" href="#">Log in</a>
 
     </form>
 
@@ -26,7 +31,7 @@
 
     <div>
         <p>Don't have account?</p>
-        <a href="register.html">Sign in!</a>
+        <a class="navContainer button" href="signUp.html">Sign in!</a>
     </div>
 
 </div>
