@@ -2,6 +2,11 @@ $(document).ready(function() {
 
 })
 
+function signUp(){
+    userAlreadyExist()
+    passwordIsOptimal()
+}
+
 function passwordIsOptimal(){
 
 let password = document.getElementById('txtPassword').value;
@@ -50,6 +55,30 @@ alert("Password must have uppercase, lowercase, special character and must have 
 window.location.reload()
 }
 
-//Continuar con que pasa si el la contraseña es optima, REVISAR SI EL CORREO YA EXISTE
+}
+
+//To check if the email is registered
+async function userAlreadyExist() {
+
+    let email = document.getElementById('txtEmail').value
+
+    const findByEmail = await fetch('api/user/' + email, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+    })
+
+    const listOfEmail = await findByEmail.json()
+
+    if(listOfEmail.length >= 1){
+        alert('User is already registered, Login')
+        window.location.href = 'login.html'
+    }else{
+        localStorage.email = email;
+    }
+
+
 
 }
