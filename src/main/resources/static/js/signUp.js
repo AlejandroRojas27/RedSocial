@@ -88,6 +88,9 @@ async function register() {
     let data = {}
     data.email = localStorage.email
     data.password = document.getElementById('txtPassword').value
+    data.name = document.getElementById('txtName').value
+    data.lastName = document.getElementById('txtLastName').value
+    data.years = document.getElementById('txtYears').value
 
     const registerUser = fetch('api/register', {
         method: 'POST',
