@@ -21,7 +21,7 @@ public class UserController {
         return userServices.getUsers();
     }
 
-    @RequestMapping(value = "register", method = RequestMethod.POST)
+    @RequestMapping(value = "api/register", method = RequestMethod.POST)
     public void registerUser(@RequestBody UserModel user) {
 
         Argon2 argon2 = Argon2Factory.create(Argon2Factory.Argon2Types.ARGON2id);

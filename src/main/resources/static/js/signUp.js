@@ -4,7 +4,6 @@ $(document).ready(function() {
 
 function signUp(){
     userAlreadyExist()
-    passwordIsOptimal()
 }
 
 function passwordIsOptimal(){
@@ -53,8 +52,10 @@ if(password.length >= 8){
 if(!containsNumber || !containsUpper || !containsLower || !containsSpecial || !lengthMoreThan8){
 alert("Password must have uppercase, lowercase, special character and must have 8 or more than 8 characters ")
 window.location.reload()
+}else{
+    localStorage.email = document.getElementById('txtEmail').value;
+    register()
 }
-
 }
 
 //To check if the email is registered
@@ -76,9 +77,30 @@ async function userAlreadyExist() {
         alert('User is already registered, Login')
         window.location.href = 'login.html'
     }else{
-        localStorage.email = email;
+        passwordIsOptimal()
     }
 
+}
 
+//To register the email on database
+async function register() {
+
+    let data = {}
+    data.email = localStorage.email
+    data.password = document.getElementById('txtPassword').value
+
+    const registerUser = fetch('api/register', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+
+    const response = await registerUser.text
+
+    console.log(response)
+    console.log('Ok')
 
 }
